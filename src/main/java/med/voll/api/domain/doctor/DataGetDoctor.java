@@ -1,4 +1,4 @@
-package med.voll.api.doctor;
+package med.voll.api.domain.doctor;
 
 public record DataGetDoctor(Long id, String nome, String email, String crm, Specialty especialidade) {
 

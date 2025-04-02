@@ -1,7 +1,6 @@
-package med.voll.api.address;
+package med.voll.api.domain.address;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

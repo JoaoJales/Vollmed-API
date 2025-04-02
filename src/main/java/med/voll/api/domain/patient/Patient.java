@@ -1,10 +1,9 @@
-package med.voll.api.patient;
+package med.voll.api.domain.patient;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
-import med.voll.api.address.Address;
-import med.voll.api.address.DataAddress;
+import med.voll.api.domain.address.Address;
 
 @Entity
 @Table(name = "patients")

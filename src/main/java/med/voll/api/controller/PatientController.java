@@ -2,12 +2,14 @@ package med.voll.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.voll.api.patient.*;
+import med.voll.api.domain.patient.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 
 @RestController
@@ -18,27 +20,46 @@ public class PatientController {
 
     @PostMapping
     @Transactional
-    public void registerPatient(@RequestBody @Valid DataRegisterPatient data){
-        repository.save(new Patient(data));
+    public ResponseEntity registerPatient(@RequestBody @Valid DataRegisterPatient data, UriComponentsBuilder uriBuilder){
+        var patient = new Patient(data);
+        repository.save(patient);
+
+        var uri = uriBuilder.path("/pacientes/{id}").buildAndExpand(patient.getId()).toUri();
+
+        return ResponseEntity.created(uri).body(new DataDetailingPatient(patient));
     }
 
     @GetMapping
-    public Page<DataGetPatients> getPatients(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable){
-        return repository.findAllByAtivoTrue(pageable)
+    public ResponseEntity<Page<DataGetPatients>> getPatients(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable){
+        var page = repository.findAllByAtivoTrue(pageable)
                 .map(DataGetPatients::new);
+
+        return ResponseEntity.ok(page);
     }
 
     @PutMapping
     @Transactional
-    public void putPatient(@RequestBody @Valid DataPutPatient data){
+    public ResponseEntity putPatient(@RequestBody @Valid DataPutPatient data){
         var patient = repository.findById(data.id()).get();
         patient.updateInfo(data);
+
+        return ResponseEntity.ok(new DataDetailingPatient(patient));
     }
 
     @DeleteMapping("/{id}")
     @Transactional
-    public void deletePatient(@PathVariable Long id){
+    public ResponseEntity deletePatient(@PathVariable Long id){
         var patient = repository.getReferenceById(id);
         patient.delete();
+
+        return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detailsPatient(@PathVariable Long id){
+        var patient = repository.getReferenceById(id);
+
+        return ResponseEntity.ok(new DataDetailingPatient(patient));
+    }
+
 }
