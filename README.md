@@ -5,16 +5,24 @@ Voll.med é uma clínica médica fictícia que precisa de um aplicativo para ges
 Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o nosso será responsável pelo desenvolvimento da API Rest desse projeto.
 
 ---
-### ✅ 1º Parte do projeto concluída com o grande aprendizado e aprofundamento em:
+### ✅ 2º Parte do projeto: Spring Security
+
+- Padronização dos retornos da API (ResponseEntity)
+- Tratamento de erros personalizado
+- Adiciona o **Spring Security**
+- Autenticação e Autorização por Tokens JWT
+- Configurações de segurança (autenticação Stateless, Hashing de senhas BCrypt)
+- Criação e verificação do Token JWT (Biblioteca Auth0 java-jwt)
+- Aplicação de Filter para inteceptar requisições 
+- Processo de Autenticação do usuário
+
+---
+### ✅ 1º Parte do projeto:
 
 - Anotações Lombok, Validations
-
 - Migrações com Flyway
-
 - MySQL
-
 - Requisições com Insomnia
-
 - Paginação, ordenação, tamanho em requisições GET
 
 ---
