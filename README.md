@@ -5,6 +5,10 @@ Voll.med é uma clínica médica fictícia que precisa de um aplicativo para ges
 Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o nosso será responsável pelo desenvolvimento da API Rest desse projeto.
 
 ---
+### ✅ 3º Parte do projeto: Consultas, Testes automatizados, Documetentação
+
+
+---
 ### ✅ 2º Parte do projeto: Spring Security
 
 - Padronização dos retornos da API (ResponseEntity)
@@ -31,8 +35,8 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 
 - [x] CRUD de médicos;
 - [x] CRUD de pacientes;
-- [ ] Agendamento de consultas(em breve);
-- [ ] Cancelamento de consultas(em breve);
+- [x] Agendamento de consultas(em breve);
+- [x] Cancelamento de consultas(em breve);
 
 ---
 
