@@ -2,6 +2,7 @@ package med.voll.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 //
+import med.voll.api.domain.ValidacaoException;
 import org.springframework.http.HttpStatus;
 //
 import org.springframework.http.ResponseEntity;
@@ -56,6 +57,10 @@ public class TratadorDeErros {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro: " +ex.getLocalizedMessage());
     }
 
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity tratarErroRegraDeNegocio(ValidacaoException ex){
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
 
 
     private record DataErrosValidation(String campo, String mensagem){

@@ -1,0 +1,1 @@
+alter table consultations add reason_cancel varchar(100)
