@@ -35,8 +35,8 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 
 - [x] CRUD de médicos;
 - [x] CRUD de pacientes;
-- [x] Agendamento de consultas(em breve);
-- [x] Cancelamento de consultas(em breve);
+- [x] Agendamento de consultas;
+- [x] Cancelamento de consultas;
 
 ---
 
