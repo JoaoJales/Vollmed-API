@@ -17,7 +17,7 @@ import med.voll.api.domain.address.Address;
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
     private String email;
     private String telefone;
