@@ -5,7 +5,13 @@ Voll.med é uma clínica médica fictícia que precisa de um aplicativo para ges
 Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o nosso será responsável pelo desenvolvimento da API Rest desse projeto.
 
 ---
-### ✅ 3º Parte do projeto: Consultas, Testes automatizados, Documetentação
+### ✅ 3º Parte do projeto: Consultas, Documetentação, Testes automatizados e Build
+
+- Agendamento e Cancelamento de Consultas
+- Isolamento dos códigos de validações de regras de negócio, aplicando princípios SOLID
+- Geração automatica da documentação utlizando o SpringDoc
+- Testes automatizados com SpringBoot (Testes de Controllers e Repositorys)
+- Build do projeto via Maven
 
 
 ---
